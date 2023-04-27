@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="营地信息"
+                android:textColor="#B22222"
+                android:textSize="20sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginBottom="20sp"
+                android:textStyle="bold"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="详细信息"
+                android:textSize="18sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="20sp"
+                android:layout_marginBottom="20sp"
+                android:id="@+id/btnCampInfo"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:elevation="10dp"/>
+        </LinearLayout>
+
+        <WebView
+            android:id="@+id/webViewCampInfo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="资金流水公示"
+                android:textColor="#B22222"
+                android:textSize="20sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginBottom="20sp"
+                android:textStyle="bold"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="详细信息"
+                android:textSize="18sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="20sp"
+                android:layout_marginBottom="20sp"
+                android:id="@+id/btnFundInfo"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:elevation="10dp"/>
+        </LinearLayout>
+        <WebView
+            android:id="@+id/webViewFundInfo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>
