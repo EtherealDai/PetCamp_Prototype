@@ -1,6 +1,8 @@
 package com.example.petshow.MemberFragment;
 
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.petshow.HomeFragment.FundInfo;
@@ -25,6 +28,7 @@ public class MemberFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    public static final int REQUEST_CODE_EDIT_FILE = 1;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -68,19 +72,29 @@ public class MemberFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_member, container, false);
 
         Button btn_edit_profile = view.findViewById(R.id.btn_edit_profile);
-        btn_edit_profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), EditFile.class);
-                startActivity(intent);
-            }
-        });
         TextView tv_pay_membership = view.findViewById(R.id.tv_pay_membership);
         TextView tv_donate_camp = view.findViewById(R.id.tv_donate_camp);
         TextView tv_donate_fund = view.findViewById(R.id.tv_donate_fund);
         TextView tv_about_us = view.findViewById(R.id.tv_about_us);
         TextView tv_settings = view.findViewById(R.id.tv_settings);
+        TextView tv_user_name = view.findViewById(R.id.tv_user_name);
+        TextView tv_user_email = view.findViewById(R.id.tv_user_email);
+        ImageView iv_user_avatar = view.findViewById(R.id.iv_user_avatar);
+        iv_user_avatar.setImageResource(R.mipmap.ic_launcher);
 
+
+        btn_edit_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //向EditFile传递用户名
+                String userName = tv_user_name.getText().toString();
+                String userEmail = tv_user_email.getText().toString();
+                Intent intent = new Intent(getActivity(), EditFile.class);
+                intent.putExtra("userName", userName);
+                intent.putExtra("userEmail", userEmail);
+                startActivityForResult(intent,REQUEST_CODE_EDIT_FILE);
+            }
+        });
         tv_pay_membership.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,4 +132,20 @@ public class MemberFragment extends Fragment {
         });
         return view;
     }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_CODE_EDIT_FILE) {
+            if (resultCode == getActivity().RESULT_OK) {
+                String newUserName = data.getStringExtra("newUserName");
+                String newUserEmail = data.getStringExtra("newUserEmail");
+                TextView tv_user_name = getActivity().findViewById(R.id.tv_user_name);
+                TextView tv_user_email = getActivity().findViewById(R.id.tv_user_email);
+                tv_user_name.setText(newUserName);
+                tv_user_email.setText(newUserEmail);
+            }
+        }
+    }
+
+
+
 }
