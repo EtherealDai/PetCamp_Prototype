@@ -14,6 +14,8 @@ import android.widget.Button;
 
 import com.example.petshow.R;
 
+import java.io.InputStream;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link HomeFragment#newInstance} factory method to
@@ -87,7 +89,8 @@ public class HomeFragment extends Fragment {
         });
         WebView webViewCampInfo = homeView.findViewById(R.id.webViewCampInfo);
         WebView webViewFundInfo = homeView.findViewById(R.id.webViewFundInfo);
-        webViewCampInfo.loadUrl("https://www.google.com/");
+
+        webViewCampInfo.loadUrl("https://mp.weixin.qq.com/s/06GG3YaBB3Z5etTLtZSvjQ");
         webViewFundInfo.loadUrl("file:///android_asset/fundInfo.html");
         return homeView;
     }
