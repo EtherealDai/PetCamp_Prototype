@@ -82,7 +82,7 @@ public class MemberFragment extends Fragment {
         ImageView iv_user_avatar = view.findViewById(R.id.iv_user_avatar);
         iv_user_avatar.setImageResource(R.mipmap.ic_launcher);
 
-
+        //编辑个人资料
         btn_edit_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,6 +95,8 @@ public class MemberFragment extends Fragment {
                 startActivityForResult(intent,REQUEST_CODE_EDIT_FILE);
             }
         });
+
+        //缴纳会费
         tv_pay_membership.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,6 +104,7 @@ public class MemberFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        //捐助营地
         tv_donate_camp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,6 +112,7 @@ public class MemberFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
         tv_donate_fund.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -46,7 +46,8 @@ public class Login extends AppCompatActivity {
         btnLoginAsGuest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openWeChat(v);
+                //跳转到浏览器进行浏览
+                jumpToPage(v);
             }
         });
 
@@ -61,15 +62,11 @@ public class Login extends AppCompatActivity {
         });
     }
 
-    public void openWeChat(View view) {
-        String weChatId="weixinhao";
-
-        Intent intent = new Intent();
-        intent.setComponent(new ComponentName("com.tencent.mm","com.tencent.mm.ui.LauncherUI"));
-        intent.putExtra("LauncherUI.From.Scaner.Shortcut", true);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        intent.setAction(Intent.ACTION_VIEW);
-        intent.setData(android.net.Uri.parse("weixin://dl/scan?code="+weChatId));
+    public void jumpToPage(View view) {
+        String URL="https://mp.weixin.qq.com/s/06GG3YaBB3Z5etTLtZSvjQ";
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(android.net.Uri.parse(URL));
+        intent.setPackage("com.android.chrome");
         startActivity(intent);
     }
 }
