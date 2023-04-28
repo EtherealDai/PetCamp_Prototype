@@ -9,15 +9,12 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="流浪猫救助平台"
+        android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.PetShow"
         tools:targetApi="31">
         <activity
-            android:name=".MemberFragment.AdminLogin.AdminPanel"
-            android:exported="false" />
-        <activity
-            android:name=".MemberFragment.AdminLogin.AdminLogin"
+            android:name=".AdminLogin"
             android:exported="false" />
         <activity
             android:name=".MemberFragment.Settings"
@@ -33,6 +30,9 @@
             android:exported="false" />
         <activity
             android:name=".MemberFragment.MemberShip"
+            android:exported="false" />
+        <activity
+            android:name=".Home_FundDesc"
             android:exported="false" />
         <activity
             android:name=".HomeFragment.FundInfo"
@@ -52,6 +52,20 @@
         <activity
             android:name=".login.Login"
             android:exported="false" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login" />
+        <activity android:name=".RequestFragment.RequestNewActivity1"
+            android:exported="false"/>
+        <activity android:name=".RequestFragment.RequestNewActivity2"
+            android:exported="false"/>
+        <activity android:name=".RequestFragment.RequestNewActivity3"
+            android:exported="false"/>
+        <activity android:name=".RequestFragment.RequestNewActivity4"
+            android:exported="false"/>
+        <activity android:name=".RequestFragment.RequestNewActivity5"
+            android:exported="false"/>
         <activity
             android:name=".login.FirstPage"
             android:exported="true">
