@@ -14,7 +14,7 @@
         android:theme="@style/Theme.PetShow"
         tools:targetApi="31">
         <activity
-            android:name=".AdminPanel"
+            android:name=".MemberFragment.AdminLogin.AdminPanel"
             android:exported="false" />
         <activity
             android:name=".MemberFragment.AdminLogin.AdminLogin"
