@@ -1,3 +1,4 @@
+//这个Java类用于调用微信支付，已经完成了，不需要修改。
 package com.example.petshow.MemberFragment;
 
 

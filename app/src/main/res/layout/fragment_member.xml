@@ -106,14 +106,6 @@
                     android:textSize="20sp"
                     android:layout_marginTop="10dp"/>
 
-                <TextView
-                    android:id="@+id/tv_donate_fund"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="资金去向"
-                    android:textSize="20sp"
-                    android:layout_marginTop="10dp"/>
-
             </LinearLayout>
 
         </LinearLayout>

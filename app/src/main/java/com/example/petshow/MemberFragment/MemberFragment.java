@@ -74,7 +74,6 @@ public class MemberFragment extends Fragment {
         Button btn_edit_profile = view.findViewById(R.id.btn_edit_profile);
         TextView tv_pay_membership = view.findViewById(R.id.tv_pay_membership);
         TextView tv_donate_camp = view.findViewById(R.id.tv_donate_camp);
-        TextView tv_donate_fund = view.findViewById(R.id.tv_donate_fund);
         TextView tv_about_us = view.findViewById(R.id.tv_about_us);
         TextView tv_settings = view.findViewById(R.id.tv_settings);
         TextView tv_user_name = view.findViewById(R.id.tv_user_name);
@@ -113,13 +112,7 @@ public class MemberFragment extends Fragment {
             }
         });
 
-        tv_donate_fund.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), FundInfo.class);
-                startActivity(intent);
-            }
-        });
+
         tv_about_us.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -28,6 +28,8 @@ public class MemberShip extends AppCompatActivity {
                     Intent intent = new Intent(MemberShip.this, WeChatPay.class);
                     startActivity(intent);
                     amount_text_view.setText("您已经缴纳过本月会员费用");
+                }else{
+                    amount_text_view.setText("缴纳失败");
                 }
 
 
