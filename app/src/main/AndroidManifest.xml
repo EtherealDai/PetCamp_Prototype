@@ -14,6 +14,15 @@
         android:theme="@style/Theme.PetShow"
         tools:targetApi="31">
         <activity
+            android:name=".MemberFragment.AdminLogin.ReplyEmail"
+            android:exported="false" />
+        <activity
+            android:name=".MemberFragment.AdminLogin.CommonRequest"
+            android:exported="false" />
+        <activity
+            android:name=".MemberFragment.AdminLogin.SuggestionEmail"
+            android:exported="false" />
+        <activity
             android:name=".MemberFragment.AdminLogin.AdminPanel"
             android:exported="false" />
         <activity
@@ -26,7 +35,7 @@
             android:name=".MemberFragment.EditFile"
             android:exported="false" />
         <activity
-            android:name=".MemberFragment.AboutUs"
+            android:name=".MemberFragment.ContactUs"
             android:exported="false" />
         <activity
             android:name=".MemberFragment.DonateCamp"
