@@ -83,20 +83,7 @@ public class RequestFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        rootView.findViewById(R.id.btn3).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getActivity(),RequestNewActivity3.class);
-                startActivity(intent);
-            }
-        });
-        rootView.findViewById(R.id.btn4).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getActivity(),RequestNewActivity4.class);
-                startActivity(intent);
-            }
-        });
+
         rootView.findViewById(R.id.btn5).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
