@@ -27,6 +27,8 @@ public class Main2Activity extends AppCompatActivity {
         fragmentManager = getSupportFragmentManager();
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
+
+
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -48,10 +50,36 @@ public class Main2Activity extends AppCompatActivity {
                 return true;
             }
         });
-        Fragment defaultFragment = new HomeFragment();
-        switchFragment(defaultFragment);
-        bottomNavigationView.setSelectedItemId(R.id.navigation_home);
+        //如果没有传回fragment参数，就默认显示HomeFragment
+        //如果传回了fragment参数，就显示对应的fragment
+        String fragment = getIntent().getStringExtra("fragment");
+        if(fragment == null){
+            switchFragment(new HomeFragment());
+            bottomNavigationView.setSelectedItemId(R.id.navigation_home);
+        } else {
+            switch (fragment) {
+                case "home":
+                    switchFragment(new HomeFragment());
+                    bottomNavigationView.setSelectedItemId(R.id.navigation_home);
+                    break;
+                case "request":
+                    switchFragment(new RequestFragment());
+                    bottomNavigationView.setSelectedItemId(R.id.navigation_dashboard);
+                    break;
+                case "member":
+                    switchFragment(new MemberFragment());
+                    bottomNavigationView.setSelectedItemId(R.id.navigation_notifications);
+                    break;
+                case "daily":
+                    switchFragment(new DailyFragment());
+                    bottomNavigationView.setSelectedItemId(R.id.camp_daily);
+                    break;
+            }
+        }
+
     }
+
+
 
     private void switchFragment(Fragment fragment) {
         if(currentFragment == fragment){
@@ -69,4 +97,5 @@ public class Main2Activity extends AppCompatActivity {
         transaction.commit();
         currentFragment = fragment;
     }
+
 }
